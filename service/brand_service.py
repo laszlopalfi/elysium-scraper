@@ -1,5 +1,5 @@
-from perfumer.resource import load_brands
 from model.brand import Brand
+from perfumer.resource import load_brands, load_asset
 
 
 def get_brands() -> [Brand]:
@@ -12,3 +12,7 @@ def get_brands() -> [Brand]:
                       brand_object['thumb_image_url'])
         brands_list.append(brand)
     return brands_list
+
+
+def get_brand_image(brand: Brand):
+    load_asset(brand.image_url[63:], brand.id, "brand")

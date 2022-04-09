@@ -1,5 +1,5 @@
-from perfumer.resource import load_notes
 from model.note import Note
+from perfumer.resource import load_notes
 
 
 def get_notes() -> [Note]:
@@ -12,4 +12,3 @@ def get_notes() -> [Note]:
                     note_object['thumb_image_url'])
         notes_list.append(note)
     return notes_list
-

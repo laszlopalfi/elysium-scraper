@@ -1,20 +1,16 @@
-from perfumer.resource import load_notes, load_brands, load_products, load_asset
-from model.note import Note
-from model.brand import Brand
-from model.product_summary import ProductSummary
-import csv
-from service.product_summary_service import get_product_summaries, export_product_summary_list
-from service.brand_service import get_brands
-import os
+from service.brand_service import get_brands, get_brand_image
 
 
 def main():
     print(" --- Scraping brands ---")
     brands = get_brands()
     print(f"Scraped {len(brands)} brands")
-    for i in range(100):
-        product_summaries = get_product_summaries(i)
-        export_product_summary_list(i, product_summaries)
+
+    for brand in brands:
+        get_brand_image(brand)
+    # for i in range(100):
+    #     product_summaries = get_product_summaries(i)
+    #     export_product_summary_list(i, product_summaries)
 
 
 #

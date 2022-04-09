@@ -1,9 +1,10 @@
-from perfumer.resource import load_products
-from model.product_summary import ProductSummary
-import json
-import time
 import csv
+import json
 import os
+import time
+
+from model.product_summary import ProductSummary
+from perfumer.resource import load_products
 
 PRODUCT_SUMMARIES_FOLDER = './output/product_summaries/'
 
